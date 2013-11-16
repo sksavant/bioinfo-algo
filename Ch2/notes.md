@@ -39,3 +39,5 @@ Experimental setup
 
 Generating a theoretical spectrum from a known peptide is easy, but we want to solve the reverse. We want to construct an unknown peptide form its experimental spectrum. This is the cyclopeptide sequencing problem
 In general case, the problem could habe multiple solutions
+
+## A Brute force algorithm for 

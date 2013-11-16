@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+def get_mass_array():
+    return list(set(get_mass_table().values()))
+
 def get_mass_table():
     masses = {}
     massfile = open("integer_mass_table.txt","r")
