@@ -1,12 +1,14 @@
 #!/usr/bin/python
 
 genome = raw_input()
+print "Read the genome into  string"
 mykmers = []
 
 tlen = len(genome)
 k,l,t = map(int, raw_input().split())
 
-def findkmers(text,t,k):
+def findkmers(genind, t,k):
+    # tect = partgen = genome[genindex:genindex+l]
     kdict = {}
 
 # Create a dictionary of k-mers incrementing by 1 everytime you get one
@@ -15,8 +17,8 @@ def findkmers(text,t,k):
 
     maxval = 0
 
-    for i in range(len(text)-k+1):
-        pattern = text[i:i+k]
+    for i in range(len(genome[genindex:genindex+l])-k+1):
+        pattern = genome[genindex+i:genindex+l+i+k]
         #print pattern
         try:
             kdict[pattern] = kdict[pattern] + 1
@@ -26,11 +28,12 @@ def findkmers(text,t,k):
             maxval = kdict[pattern]
     for k in kdict.keys():
         if kdict[k] >=t and k not in mykmers:
-            print k,
+            #print k,
             mykmers.append(k)
-
+            print len(mykmers)
 
 for genindex in range(tlen-l+1):
-    partgen = genome[genindex:genindex+l]
-    findkmers(partgen,t,k)
+    findkmers(genindex,t,k)
+    print genindex
+print len(mykmers)
 
